@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>RESTarantino</title>
+  <style type="text/css" media="screen">
+
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #555;
+  }
+
+  h1 {
+    font-size: 2em;
+    padding: 0.4em 1em;
+    border-bottom: 1px solid #999;
+    margin: 0;
+  }
+
+  p {
+    margin: 0.75em 0;
+  }
+
+  pre {
+    font-size: 0.9em;
+    margin: 0;
+  }
+
+  a {
+    color: #3498db;
+  }
+
+  .resource {
+    float: left;
+    width: 320px;
+    margin: 1em 2em;
+  }
+
+  .title {
+    font-size: 1.1em;
+    line-height: 0.8em;
+    border-bottom: 1px solid #3498db;
+    padding: 0.2em 0;
+  }
+
+  .verb {
+    font-size: 0.8em;
+    color: #fff;
+    background-color: #3498db;
+    padding: 0.2em 0.4em;
+  }
+
+  .spec {
+    font-size: 0.8em;
+  }
+
+  .spec label {
+    color: #999;
+  }
+  .spec label:after {
+    content: ":";
+  }
+
+  </style>
+</head>
+<body>
+
+  <h1>RESTarantino API</h1>
+
+  <div class="resource">
+    <h2 class="title">
+      <span class="verb">GET</span>
+      /movies
+    </h2>
+    <div class="spec">
+      <p><label>Description</label> Returns the list of Quentin Tarantino's movies.</p>
+      <p><label>Response data model</label></p>
+      <pre>
+[
+  {
+    "id": "number",
+    "title": "string",
+    "year": "number",
+    "duration": "number",
+    "budget": "number",
+    "poster": "URI",
+    "actors": "URI"
+  }
+]
+      </pre>
+      <p><label>Response content types</label> application/json</p>
+      <p><label>Sample</label> <a href="/movies">Tarantino movies list</a></p>
+    </div>
+  </div>
+
+  <div class="resource">
+    <h2 class="title">
+      <span class="verb">GET</span>
+      /movies/{id}
+    </h2>
+    <div class="spec">
+      <p><label>Description</label> Gets a movie by its id.</p>
+      <p><label>Path parameters</label> Movie id</p>
+      <p><label>Response data model</label></p>
+      <pre>
+{
+  "id": "number",
+  "title": "string",
+  "year": "number",
+  "duration": "number",
+  "budget": "number",
+  "poster": "URI",
+  "actors": "URI"
+}
+      </pre>
+      <p><label>Response content types</label> application/json</p>
+      <p><label>Response error codes</label> 404</p>
+      <p><label>Sample</label> <a href="/movies/1">Pulp Fiction</a></p>
+    </div>
+  </div>
+
+  <div class="resource">
+    <h2 class="title">
+      <span class="verb">GET</span>
+      /movies/{id}/actors
+    </h2>
+    <div class="spec">
+      <p><label>Description</label> Returns the list of actors in a movie given its id.</p>
+      <p><label>Path parameters</label> Movie id</p>
+      <p><label>Response data model</label></p>
+      <pre>
+[
+  {
+    "id": "number",
+    "name": "string",
+    "role": "string"
+  }
+]
+      </pre>
+      <p><label>Response content types</label> application/json</p>
+      <p><label>Response error codes</label> 404</p>
+      <p><label>Sample</label> <a href="/movies/4/actors">Inglourious Basterds' actors</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
