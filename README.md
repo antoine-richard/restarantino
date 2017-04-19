@@ -5,8 +5,8 @@ Restarantino
 
 ___
 
-A backend used for a programming workshop: [AngularJS Movie Workshop](https://github.com/antoine-richard/angular-movie-workshop).  
-It provides REST services giving informations about Quentin Tarantino's filmography.
+A REST API providing informations about Quentin Tarantino's filmography.  
+Used for a programming workshop: [AngularJS Movie Workshop](https://github.com/antoine-richard/angular-movie-workshop).
 
 Deployment
 ----------
